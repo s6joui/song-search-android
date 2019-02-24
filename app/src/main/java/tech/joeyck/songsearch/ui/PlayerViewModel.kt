@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import tech.joeyck.songsearch.App
-import tech.joeyck.songsearch.data.SearchResult
 import tech.joeyck.songsearch.data.TrackRepository
 import tech.joeyck.songsearch.data.TrackResult
 import javax.inject.Inject

@@ -39,6 +39,7 @@ class PlayerActivity : AppCompatActivity() {
         DaggerMediaComponent.create().inject(this)
 
         playerViewModel = ViewModelProviders.of(this).get(PlayerViewModel::class.java)
+        loadState(intent.extras)
 
         playerViewModel.track.observe(this, Observer {
             text_album.text = getString(R.string.album_title,it.collectionName,it.releaseDate?.yearString())
@@ -94,12 +95,6 @@ class PlayerActivity : AppCompatActivity() {
             resetPlayer()
         }
 
-        loadState(intent.extras)
-    }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-        playerViewModel.fetchTrack(playerViewModel.trackIndex)
     }
 
     private fun setupPlayer(dataSource: String){
@@ -137,6 +132,7 @@ class PlayerActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
         loadState(savedInstanceState)
+        playerViewModel.fetchTrack(playerViewModel.trackIndex)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
