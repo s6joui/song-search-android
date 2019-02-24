@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Song Search</string>
+    <string name="search">Search by artist, song, album…</string>
+    <string name="sort_length">Sort by track length</string>
+    <string name="sort_genre">Sort by genre</string>
+    <string name="sort_price">Sort by price</string>
+    <string name="sort_default">Sort by default</string>
+    <string name="share_track">Share track</string>
+    <string name="from_album">FROM ALBUM</string>
+    <string name="album_title">%s (%s)</string>
+    <string name="no_results">No results</string>
+</resources>
